@@ -16,9 +16,6 @@ RUN apt-get update \
         wget \
         unzip \
         xz-utils \
-        python3 \
-        python3-venv \
-        python3-pip \
         libssl-dev \
         libgmp-dev \
         libboost-all-dev \

@@ -1,7 +1,6 @@
 .git
 .gitignore
 build
-.venv
 vcpkg_installed
 out
 bin

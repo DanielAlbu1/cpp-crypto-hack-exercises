@@ -11,8 +11,7 @@
         "ms-vscode.cpptools",
         "ms-vscode.cmake-tools",
         "llvm-vs-code-extensions.vscode-clangd",
-        "ms-vscode.cpptools-extension-pack",
-        "ms-python.python"
+        "ms-vscode.cpptools-extension-pack"
       ],
       "settings": {
         "cmake.configureOnOpen": true,
@@ -26,6 +25,6 @@
       }
     }
   },
-  "postCreateCommand": "python3 -m venv .venv && . .venv/bin/activate && python -m pip install --upgrade pip && cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug",
+  "postCreateCommand": "cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug",
   "postStartCommand": "cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug"
 }
