@@ -1,0 +1,31 @@
+{
+  "name": "cpp-cryptohack-dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-python.python"
+      ],
+      "settings": {
+        "cmake.configureOnOpen": true,
+        "cmake.generator": "Ninja",
+        "cmake.buildDirectory": "${workspaceFolder}/build",
+        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+        "clangd.arguments": [
+          "--background-index",
+          "--compile-commands-dir=${workspaceFolder}/build"
+        ]
+      }
+    }
+  },
+  "postCreateCommand": "python3 -m venv .venv && . .venv/bin/activate && python -m pip install --upgrade pip && cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug",
+  "postStartCommand": "cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug"
+}

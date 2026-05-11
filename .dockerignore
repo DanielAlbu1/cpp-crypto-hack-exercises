@@ -1,0 +1,13 @@
+.git
+.gitignore
+build
+.venv
+vcpkg_installed
+out
+bin
+obj
+*.o
+*.obj
+*.exe
+*.pdb
+compile_commands.json
